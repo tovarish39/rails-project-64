@@ -46,6 +46,8 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'sqlite3'
+
   gem 'debug', platforms: %i[mri windows]
 end
 
@@ -56,7 +58,6 @@ end
 group :development do
   gem 'rubocop'
   gem 'rubocop-rails'
-  gem 'sqlite3'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
