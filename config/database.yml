@@ -15,6 +15,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: rails_project_64_production
-  username: rails_project_64
-  password: <%= ENV["RAILS_PROJECT_64_DATABASE_PASSWORD"] %>
+  database: hexlet_education_postgres
+  username: hexlet_education_postgres_user
+  password: m43CdpJ0lvzbcWqccRevVNNoZxFdbLWR
