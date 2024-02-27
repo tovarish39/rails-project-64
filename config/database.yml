@@ -18,3 +18,5 @@ production:
   database: hexlet_education_postgres
   username: hexlet_education_postgres_user
   password: m43CdpJ0lvzbcWqccRevVNNoZxFdbLWR
+  host: dpg-cneuouev3ddc73adhr40-a
+  port: 5432
