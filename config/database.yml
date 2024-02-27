@@ -15,8 +15,8 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: hexlet_education_postgres
-  username: hexlet_education_postgres_user
-  password: m43CdpJ0lvzbcWqccRevVNNoZxFdbLWR
-  host: dpg-cneuouev3ddc73adhr40-a
-  port: 5432
+  # database: hexlet_education_postgres
+  # username: hexlet_education_postgres_user
+  # password: m43CdpJ0lvzbcWqccRevVNNoZxFdbLWR
+  # host: dpg-cneuouev3ddc73adhr40-a
+  # port: 5432
