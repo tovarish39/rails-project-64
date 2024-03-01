@@ -1,1 +1,1 @@
-json.partial! "marks/mark", mark: @mark
+json.partial! 'marks/mark', mark: @mark

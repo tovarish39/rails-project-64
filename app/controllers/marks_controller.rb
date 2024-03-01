@@ -1,5 +1,5 @@
 class MarksController < ApplicationController
-  before_action :set_mark, only: %i[ show edit update destroy ]
+  before_action :set_mark, only: %i[show edit update destroy]
 
   # GET /marks or /marks.json
   def index
@@ -7,8 +7,7 @@ class MarksController < ApplicationController
   end
 
   # GET /marks/1 or /marks/1.json
-  def show
-  end
+  def show; end
 
   # GET /marks/new
   def new
@@ -16,8 +15,7 @@ class MarksController < ApplicationController
   end
 
   # GET /marks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /marks or /marks.json
   def create
@@ -25,7 +23,7 @@ class MarksController < ApplicationController
 
     respond_to do |format|
       if @mark.save
-        format.html { redirect_to mark_url(@mark), notice: "Mark was successfully created." }
+        format.html { redirect_to mark_url(@mark), notice: 'Mark was successfully created.' }
         format.json { render :show, status: :created, location: @mark }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class MarksController < ApplicationController
   def update
     respond_to do |format|
       if @mark.update(mark_params)
-        format.html { redirect_to mark_url(@mark), notice: "Mark was successfully updated." }
+        format.html { redirect_to mark_url(@mark), notice: 'Mark was successfully updated.' }
         format.json { render :show, status: :ok, location: @mark }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class MarksController < ApplicationController
     @mark.destroy!
 
     respond_to do |format|
-      format.html { redirect_to marks_url, notice: "Mark was successfully destroyed." }
+      format.html { redirect_to marks_url, notice: 'Mark was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mark
-      @mark = Mark.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mark_params
-      params.fetch(:mark, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mark
+    @mark = Mark.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def mark_params
+    params.fetch(:mark, {})
+  end
 end
