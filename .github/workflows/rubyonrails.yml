@@ -58,4 +58,4 @@ jobs:
       # - name: Lint Ruby files
       #   run: bin/rubocop --parallel
       - name: linting by rake
-        run: rake lint
+        run: bundle exec rake lint
