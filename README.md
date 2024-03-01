@@ -1,3 +1,4 @@
+![example workflow](https://github.com/tovarish39/rails-project-64/actions/workflows/rubyonrails.yml/badge.svg)
 # deployed at [link-adress](https://educational-project-2.onrender.com)
 
 # README
