@@ -1,21 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '3.2.2'
 
-gem 'colorize'
-gem 'faker'
-gem 'power_assert', '~> 2.0', '>= 2.0.3'
-gem 'slim_lint', '~> 0.22.1'
-gem 'slim-rails', '~> 3.1', '>= 3.1.1'
-
-gem 'rubocop'
-gem 'rubocop-rails'
-
-gem 'sentry-rails'
-gem 'sentry-ruby'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1.3'
+gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -59,7 +49,6 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
-  # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 end
 
@@ -83,3 +72,17 @@ end
 group :production do
   gem 'pg'
 end
+
+gem 'devise', '~> 4.9'
+gem 'rubocop'
+
+gem 'annotate'
+gem 'colorize'
+gem 'faker'
+gem 'power_assert', '~> 2.0', '>= 2.0.3'
+gem 'rubocop-rails'
+gem 'slim_lint'
+gem 'slim-rails'
+
+gem 'sentry-rails'
+gem 'sentry-ruby'

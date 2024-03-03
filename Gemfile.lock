@@ -77,8 +77,12 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.6)
     bindex (0.8.1)
     bootsnap (1.18.3)
@@ -103,8 +107,13 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    drb (2.2.0)
-      ruby2_keywords
+    devise (4.9.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    drb (2.2.1)
     erubi (1.12.0)
     faker (3.2.3)
       i18n (>= 1.8.11, < 2)
@@ -131,7 +140,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.2)
+    marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.22.2)
@@ -149,11 +158,12 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pg (1.5.5)
+    pg (1.5.6)
     power_assert (2.0.3)
     psych (5.1.2)
       stringio
@@ -209,8 +219,11 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.6)
-    rubocop (1.60.2)
+    rubocop (1.61.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -221,15 +234,14 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.30.0)
-      parser (>= 3.2.1.0)
-    rubocop-rails (2.23.1)
+    rubocop-ast (1.31.1)
+      parser (>= 3.3.0.4)
+    rubocop-rails (2.24.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-      rubocop-ast (>= 1.30.0, < 2.0)
+      rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.18.1)
       base64 (~> 0.2)
@@ -241,16 +253,16 @@ GEM
       sentry-ruby (~> 5.16.1)
     sentry-ruby (5.16.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-    slim (4.1.0)
-      temple (>= 0.7.6, < 0.9)
-      tilt (>= 2.0.6, < 2.1)
+    slim (5.2.1)
+      temple (~> 0.10.0)
+      tilt (>= 2.1.0)
     slim-rails (3.6.3)
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
-    slim_lint (0.22.1)
-      rubocop (>= 0.78.0)
-      slim (>= 3.0, < 5.0)
+    slim_lint (0.26.0)
+      rubocop (>= 1.0, < 2.0)
+      slim (>= 3.0, < 6.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -262,9 +274,9 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
-    temple (0.8.2)
+    temple (0.10.3)
     thor (1.3.1)
-    tilt (2.0.11)
+    tilt (2.3.0)
     timeout (0.4.1)
     turbo-rails (2.0.4)
       actionpack (>= 6.0.0)
@@ -273,6 +285,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -291,26 +305,28 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotate
   bootsnap
   capybara
   colorize
   cssbundling-rails
   debug
+  devise (~> 4.9)
   faker
   jbuilder
   jsbundling-rails
   pg
   power_assert (~> 2.0, >= 2.0.3)
   puma (>= 5.0)
-  rails (~> 7.1.3)
+  rails (~> 7.1.3, >= 7.1.3.2)
   redis (>= 4.0.1)
   rubocop
   rubocop-rails
   selenium-webdriver
   sentry-rails
   sentry-ruby
-  slim-rails (~> 3.1, >= 3.1.1)
-  slim_lint (~> 0.22.1)
+  slim-rails
+  slim_lint
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
