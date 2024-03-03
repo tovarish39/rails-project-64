@@ -1,9 +1,12 @@
 require: rubocop-rails
 
 AllCops:
+  Exclude:
+    - '**/*.slim'
   TargetRubyVersion: 3.2
   SuggestExtensions: false
   NewCops: enable
+
 
 Metrics/BlockLength:
   Exclude:
@@ -16,3 +19,7 @@ Style/Documentation:
 Layout/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
+
+Style/HashSyntax:
+  Exclude:
+    - 'app/views/**/*.slim'
