@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   # GET /posts or /posts.json
   def index
@@ -19,18 +20,16 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit; end
 
-  # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to post_url(@post), notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if @post.save
+      flash[:notice] = t('post.notice.success_created')
+      redirect_to post_url(@post)
+    else
+      flash[:alert] = t('post.notice.failed_created')
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -66,6 +65,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :category_id)
   end
 end

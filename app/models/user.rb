@@ -23,4 +23,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :posts # rubocop:disable Rails/HasManyOrHasOneDependent
+  has_many :comments, class_name: 'PostComment', dependent: :restrict_with_error
 end

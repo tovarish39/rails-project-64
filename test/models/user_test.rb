@@ -21,7 +21,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
+  # test 'the truth' do
+  #   user = users(:one)
+  #   puts user.id
   #   assert true
   # end
 end

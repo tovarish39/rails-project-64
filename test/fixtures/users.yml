@@ -23,6 +23,10 @@
 #
 one:
   email: qqqq@qqqq.qq
+  encrypted_password:  aaaaaaaaaaaaaaaaaaaaaaaaa
 
 two:
   email: qqqq2@qqqq.qq
+  encrypted_password: bbbbbbbbbbbbbbbbbbbbbbbb
+  
+

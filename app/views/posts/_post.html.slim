@@ -1,7 +1,7 @@
 div id="#{dom_id post}"
-  p
-    strong Title:
-    =< post.title
-  p
-    strong Body:
+  h2
+    = link_to post.title, post, style: 'cursor: pointer;'
+  p style='word-break: break-all;'
     =< post.body
+  - if post.comments.size.positive?
+    p = "comments #{post.comments.size}"

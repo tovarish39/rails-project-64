@@ -1,8 +1,11 @@
-.container.bg-secondary
-  .col
-    - if current_user.present?
-      = link_to 'Log Out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'text-black-50 p-3 fs-5'
-      span.text-black-50.p-3.fs-5 = current_user.email
-    - else
-      = link_to 'Log In', new_user_session_path, class: 'text-black-50 p-3 fs-5'
-      = link_to 'Sign Up', new_user_registration_path, class: 'text-black-50 p-3 fs-5'
+.container.bg-secondary.rounded-bottom.mb-4
+  .row.p-2.align-items-center.justify-content-between
+    = link_to image_tag('home.svg'), root_path, style: 'width: 60px;', class: 'cursor-pointer d-flex'
+    .w-auto
+      - if current_user.present?
+        span.text-black-50.p-2.fs-5 style='vertical-align: middle;' = current_user.email
+        .btn.btn-outline-success.w-auto.ms-3 = link_to t('nav.create_post'), new_post_path, class: 'text-black-50 p-3 fs-5 text-decoration-none'
+        .btn.btn-outline-warning.w-auto.ms-3 = link_to t('nav.log_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'text-black-50 p-3 fs-5 text-decoration-none'
+      - else
+        .btn.btn-outline-info.w-auto = link_to t('nav.log_in'), new_user_session_path, class: 'text-black-50 p-2 fs-5 text-decoration-none'
+        .btn.btn-outline-info.w-auto.ms-3 = link_to t('nav.sign_up'), new_user_registration_path, class: 'text-black-50 p-2 fs-5 text-decoration-none'

@@ -10,4 +10,8 @@ html
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
   body class='container'
     = render 'partials/nav'
+    - if flash[:notice]
+        .alert.alert-success = flash[:notice]
+    - if flash[:alert]
+        .alert.alert-danger = flash[:alert]
     = yield

@@ -1,0 +1,14 @@
+en:
+  post:
+    all: All Posts
+    new: New Post
+    notice:
+      success_created: Post was successfully created
+      failed_created: Invalid field format
+    btn:
+      create: Create
+      back_to_posts: Back to posts
+    form:
+      hint:
+        title: 5 - 255 characters
+        body: 100 - 4000 characters

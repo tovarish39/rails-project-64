@@ -1,11 +1,6 @@
-p style="color: green" = notice
-
-h1 Posts
+h1 class='d-flex justify-content-center' = t('post.all')
 
 #posts
   - @posts.each do |post|
     == render post
-    p
-      = link_to "Show this post", post
-
-= link_to "New post", new_post_path
+    hr
