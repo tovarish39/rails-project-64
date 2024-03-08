@@ -25,7 +25,8 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  has_many :comments, class_name: 'PostComment', dependent: :restrict_with_error
+  has_many :comments, class_name: 'PostComment' # , dependent: :restrict_with_error
+  has_many :likes   , class_name: 'PostLike' # , dependent: :restrict_with_error # rubocop:disable Layout/SpaceBeforeComma
 
   validates :title, length: { in: 5..255 }
   validates :body, length: { in: 100..4000 }

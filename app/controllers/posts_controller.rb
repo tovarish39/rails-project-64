@@ -10,7 +10,10 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show; end
+  def show
+    @likes = @post.likes
+    @comments = @post.comments.order(created_at: :desc)
+  end
 
   # GET /posts/new
   def new

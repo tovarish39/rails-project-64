@@ -1,6 +1,6 @@
 == render @post
 
-div
+.mb-4
   = link_to t('post.btn.back_to_posts'), posts_path, class: 'btn btn-secondary'
 
   - if current_user && @post.user == current_user
@@ -8,4 +8,5 @@ div
     = link_to 'Edit this post', edit_post_path(@post)
     = button_to 'Destroy this post', @post, method: :delete, class: 'btn btn-danger'
 
-= render 'post_comments', comments: @post.comments
+= render 'new_post_comment', post: @post, parent_id: nil
+= render 'post_comments', comments: @comments

@@ -9,7 +9,7 @@
 #
 
 one:
-  name: MyString
+  name: Category first
 
 two:
-  name: MyString
+  name: Category second

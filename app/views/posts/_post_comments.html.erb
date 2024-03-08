@@ -1,0 +1,23 @@
+<% def render_tree_comments(comment, type: :not_first) %>
+    <div class='ps-4'>
+      <div class='bg-primary-subtle py-2 ps-4'><%= comment.user.email %></div>
+      <div class='border mb-4 px-4'> 
+        <%= render 'post_comment_content', comment: %>
+        <% if comment.children? %>
+            <% comment.children.each do |comment| %>
+              <% render_tree_comments(comment) %>
+            <% end %>
+        <% end %>
+      </div>    
+    </div>
+<% end %>
+
+
+
+<% comments.each do |comment| %>
+    <% if comment.root? %>
+        <% render_tree_comments(comment, type: :first) %> 
+    <% end %>
+<% end %>
+
+<div class="mb-5"></div>

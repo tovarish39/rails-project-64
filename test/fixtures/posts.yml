@@ -22,13 +22,13 @@
 #
 
 not_valid_title:
-  title: M
+  title: fail
   body: bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
   user: :one
   category: :one
 
 valid_all:
-  title: valid_title
+  title: valid_title_length
   body: bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
   user: :one
   category: :one

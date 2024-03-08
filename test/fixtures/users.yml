@@ -22,11 +22,9 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: qqqq@qqqq.qq
-  encrypted_password:  aaaaaaaaaaaaaaaaaaaaaaaaa
+  email: some1@email.qq
+  encrypted_password:  secret_password1
 
 two:
-  email: qqqq2@qqqq.qq
-  encrypted_password: bbbbbbbbbbbbbbbbbbbbbbbb
-  
-
+  email: some2@email.qq
+  encrypted_password: secret_password2

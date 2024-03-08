@@ -3,7 +3,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts do
-    resources :comments, only: %i[create delete update]
+    resources :comments, only: %i[create destroy update], shallow: true
+    resources :likes, only: %i[create destroy], shallow: true
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
