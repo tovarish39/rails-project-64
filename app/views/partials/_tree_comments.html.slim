@@ -1,0 +1,8 @@
+.ps-4
+  .bg-primary-subtle.py-2.ps-4
+    = comment.user.email
+  .border.mb-4.px-4
+    = render 'post_comment_content', comment:
+    - if comment.children?
+      - comment.children.each do |comment|
+        = render 'partials/tree_comments', comment:
