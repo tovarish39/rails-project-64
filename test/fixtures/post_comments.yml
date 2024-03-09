@@ -23,14 +23,20 @@
 #  user_id  (user_id => users.id)
 #
 
-one:
-  content: MyString
-  user: one
+root:
+  content: <%= Faker::Lorem.paragraph %>  
+  user: one  
   post: one
   ancestry: /
+  
+nested:
+  content: <%= Faker::Lorem.paragraph %>  
+  user: one  
+  post: one
+  ancestry: <%= ActiveRecord::FixtureSet.identify(:root) %>
 
-two:
-  content: MyString
-  user: two
-  post: two
-  ancestry: /
+nested_nested:
+  content: <%= Faker::Lorem.paragraph %>  
+  user: one  
+  post: one
+  ancestry: <%= ActiveRecord::FixtureSet.identify(:nested) %>

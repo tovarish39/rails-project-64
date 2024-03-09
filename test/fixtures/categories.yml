@@ -7,9 +7,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
 one:
-  name: Category first
+  name: category_one  
 
 two:
-  name: Category second
+  name: category_two  

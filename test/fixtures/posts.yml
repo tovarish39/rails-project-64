@@ -20,15 +20,20 @@
 #  category_id  (category_id => categories.id)
 #  user_id      (user_id => users.id)
 #
+one:
+  title: title_one  
+  body:  <%= "some valid length body of POST " * 20 %> 
+  user: one
+  category: one
 
-not_valid_title:
+two:
+  title: title_two
+  body:  <%= "some valid length body of POST " * 20 %> 
+  user: one
+  category: one
+
+invalid_title_length:
   title: fail
-  body: bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
-  user: :one
-  category: :one
-
-valid_all:
-  title: valid_title_length
-  body: bodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybodybody
-  user: :one
-  category: :one
+  body: <%= "some valid length body of POST " * 20 %>
+  user: one
+  category: one

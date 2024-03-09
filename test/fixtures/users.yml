@@ -20,11 +20,14 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
 one:
-  email: some1@email.qq
-  encrypted_password:  secret_password1
+  email: <%= Faker::Internet.email %>  
+  encrypted_password: secret_password_one
 
 two:
-  email: some2@email.qq
-  encrypted_password: secret_password2
+  email: <%= Faker::Internet.email %>  
+  encrypted_password: secret_password_two
+
+my_test_account:
+  email: qq@qq.qq
+  encrypted_password: secret_password_for_test_account

@@ -89,6 +89,6 @@ gem 'sentry-ruby'
 
 gem 'simple_form', '~> 5.3'
 
-gem "bcrypt", "~> 3.1"
+gem 'bcrypt', '~> 3.1'
 
-gem "ancestry", "~> 4.3"
+gem 'ancestry', '~> 4.3'
