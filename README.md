@@ -1,6 +1,4 @@
-![example workflow](https://github.com/tovarish39/rails-project-64/actions/workflows/rubyonrails.yml/badge.svg)
-
-![hexlet-check](https://github.com/tovarish39/rails-project-63/actions/workflows/hexlet-check.yml/badge.svg)
+![local tests and linter](https://github.com/tovarish39/rails-project-64/actions/workflows/rubyonrails.yml/badge.svg) ![hexlet-check](https://github.com/tovarish39/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)
 
 # Проект "Коллективный блог"
 Проект - доска постов, которые создают пользователи сайта. Под постами пользователи могут оставлять свои комментарии(в виде "дерева" на определённую глубину), ставить лайк на пост. Просматривать посты могут как залогинненные, так и не залогинненные пользователи.Пользователи сайта могут регистрироваться и заходить на сайт под своим аккаунтом. Залогиненные пользователи могут создавать посты, писать комментарии под постами, писать комментарии на уже созданные комментарии. Авторы постов и комментариев могут их редактировать и удалять.
