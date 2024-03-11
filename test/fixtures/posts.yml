@@ -23,17 +23,17 @@
 one:
   title: title_one  
   body:  <%= "some valid length body of POST " * 20 %> 
-  user: one
+  creator: one
   category: one
 
 two:
   title: title_two
   body:  <%= "some valid length body of POST " * 20 %> 
-  user: one
+  creator: one
   category: one
 
 invalid_title_length:
   title: fail
   body: <%= "some valid length body of POST " * 20 %>
-  user: one
+  creator: one
   category: one
