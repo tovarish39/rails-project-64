@@ -1,27 +1,35 @@
 ![example workflow](https://github.com/tovarish39/rails-project-64/actions/workflows/rubyonrails.yml/badge.svg)
-# deployed at [link-adress](https://educational-project-2.onrender.com)
 
-# README
+![hexlet-check](https://github.com/tovarish39/rails-project-63/actions/workflows/hexlet-check.yml/badge.svg)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Проект "Коллективный блог"
+Проект - доска постов, которые создают пользователи сайта. Под постами пользователи могут оставлять свои комментарии(в виде "дерева" на определённую глубину), ставить лайк на пост. Просматривать посты могут как залогинненные, так и не залогинненные пользователи.Пользователи сайта могут регистрироваться и заходить на сайт под своим аккаунтом. Залогиненные пользователи могут создавать посты, писать комментарии под постами, писать комментарии на уже созданные комментарии. Авторы постов и комментариев могут их редактировать и удалять.
 
-Things you may want to cover:
+# Техническое описание и требования к реализации проекта
+- ruby  --version # => 3.2.2
+- rails --version # => 7.1.3
 
-- Ruby version
+## Оформление
+- В файле README.md есть github action бейджик со статусом прохождения тестов и литнера
+- В файле README.md приложены ссылки на демонстрационный проект
 
-- System dependencies
+## Тесты
+- Используется minitest и power assert
+- Для генерации тестовых данных используется Faker
 
-- Configuration
+## Именование
+- Вложенные ресурсы содержат префикс в виде имени основной сущности
+- Контроллеры и связи не содержат префикса
 
-- Database creation
+## Код
+- Круды построены через ресурсный роутинг
+- Все ссылки (в шаблонах и контроллерах) строятся только через именованный роутинг
+- Все интерфейсные тексты находятся в файлах локалей
+- Для представлений используется шаблонизатор slim
+- Используются только стандартные механизмы Bootstrap
 
-- Database initialization
+# Проект расположен по [ссылке](https://educational-project-2.onrender.com). 
+Доступен до конца апреля 2024, так как на продакшне стоит postgres, а бесплатное использование заканчивается этим сроком
 
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+# запуск проекта
+    make setup
