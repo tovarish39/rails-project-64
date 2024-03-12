@@ -3,9 +3,9 @@ h2
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .form-inputs
     .form-group.email.user_email
-      = f.input :email, autofocus: true, autocomplete: "email", class: 'form-control string email optional', required: true
+      = f.input :email, autofocus: true, autocomplete: 'email', class: 'form-control string email optional', required: true
     .form-group.password.optional.user_password
-      = f.input :password, autocomplete: "current-password", class: 'form-control password optional', required: true, label: t('devise.password')
+      = f.input :password, autocomplete: 'current-password', class: 'form-control password optional', required: true, label: t('devise.password')
     - if devise_mapping.rememberable?
       fieldset.form-group.boolean.optional.user_remember_me
         .form-check

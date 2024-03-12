@@ -2,8 +2,3 @@
   = f.input :parent_id, as: :hidden, input_html: { value: parent_id }
   = f.input :content, label: false
   = f.submit t('comment.btn.create'), class: 'btn btn-primary'
-
-
-/ = simple_form_for PostComment.new, url: post_comments_path(post) do |f|
-/     = f.input :parent_id, as: :hidden, input_html: { value: parent_id }
-/     = f.input :content,  placeholder: 'new comment', label: false, input_html: { onchange: 'submit()', class:'w-75 ms-4' }

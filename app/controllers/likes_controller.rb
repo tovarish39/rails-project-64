@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  before_action :authenticate_user!
-
   def create
-    post = Post.find(params[:post_id])
-    PostLike.create(
-      post:,
-      user: current_user
-    )
+    if current_user
+      post = Post.find(params[:post_id])
+      PostLike.create(
+        post:,
+        user: current_user
+      )
+    end
     # не работает с turbo. без turbo не пробовал
     # redirect_to "#{request.referer}#post_#{post_id}"
 
@@ -19,8 +19,10 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = PostLike.find(params[:id])
-    like.destroy
+    if current_user
+      like = PostLike.find(params[:id])
+      like.destroy
+    end
     # не работает с turbo. без turbo не пробовал
     # redirect_to "#{request.referer}#post_#{post_id}"
     redirect_to request.url
