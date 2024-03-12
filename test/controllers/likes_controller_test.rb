@@ -15,7 +15,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
   test 'should destroy like' do
-    delete like_url(@like)
+    delete post_like_url(post_id: @like.post.id, id: @like.id)
     assert_response :redirect
   end
 end

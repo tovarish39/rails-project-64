@@ -10,9 +10,9 @@
         span.me-2 = @post.likes.count
         - my_like = my_like_by(@post, current_user)
         - if current_user && my_like
-          = link_to render('partials/like_image', type: :liked), like_path(my_like), data:{ turbo_method: :delete},  style:'border: none; border-radius: 50%; background-color: white'
+          = link_to render('partials/like_image', type: :liked), post_like_path(post_id: my_like.post.id, id: my_like.id), data:{ turbo_method: :delete}
         - else
-          = link_to render('partials/like_image', type: :unliked), post_likes_path(@post), data:{ turbo_method: :post}, style:'border: none; border-radius: 50%; background-color: white'
+          = link_to render('partials/like_image', type: :unliked), post_likes_path(@post), data:{ turbo_method: :post}
 
 = render 'comments-block', post: @post
 
