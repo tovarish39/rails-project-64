@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts do
-    resources :comments, only: %i[create destroy update], shallow: true
+    resources :comments, only: %i[create destroy update] # , shallow: true
     resources :likes, only: %i[create destroy] # , shallow: true
   end
 

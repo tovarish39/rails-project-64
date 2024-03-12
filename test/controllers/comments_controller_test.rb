@@ -17,12 +17,13 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     end
   end
   test 'should update comment' do
-    patch comment_url(@comment_root), params: { post_comment: { content: 'new content' } }
+    patch post_comment_url(post_id: @comment_root.post.id, id: @comment_root),
+          params: { post_comment: { content: 'new content' } }
     assert_redirected_to post_url(@comment_root.post)
   end
   test 'should destroy comment' do
     assert_difference('PostComment.count', -1) do
-      delete comment_url(@comment)
+      delete post_comment_url(post_id: @comment.post.id, id: @comment)
     end
   end
 end
