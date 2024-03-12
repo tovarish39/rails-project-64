@@ -1,0 +1,16 @@
+.card.mt-2.rounded-0
+  .card-header.border-0
+    = link_to '#', '#', class: 'me-2'
+    span.me-2 = comment.user.email
+    span.fs-6.text-muted = l(comment.created_at, format: :custom)
+  .card-body.border-0
+    p.card-text = comment.content
+  .card-footer.border-0
+    - if comment.ancestors.count < Rails.application.config.max_comment_depth
+      a.fs-6.text-decoration-underline.text-lowercase(type="button" aria-expanded="false" aria-controls="response_comment-647284951" data-bs-target="#response_comment-#{comment.id}" data-bs-toggle="collapse" href="#") 
+        = t('comment.link.answer')
+    .ms-2.collapse id="response_comment-#{comment.id}"
+      = render 'comment-form', post: comment.post, parent_id: comment.id
+    - if comment.children?
+      - comment.children.each do |child_node|
+        = render 'comment-node', comment: child_node

@@ -1,12 +1,18 @@
-== render @post
+= render 'bread-crumb', post: @post
+.row.justify-content-center.mt-4
+  article.coll-12
+    h1.mb-4.mb-lg-5 = @post.title
+    p.text-break = @post.body
+    .d-flex.justify-content-between.mt-5
+      .post-section
+        span.me-2 = @post.creator.email
+      .likes-section
+        span.me-2 = @post.likes.count
+        - my_like = my_like_by(@post, current_user)
+        - if current_user && my_like
+          = link_to render('partials/like_image', type: :liked), like_path(my_like), data:{ turbo_method: :delete},  style:'border: none; border-radius: 50%; background-color: white'
+        - else
+          = link_to render('partials/like_image', type: :unliked), post_likes_path(@post), data:{ turbo_method: :post}, style:'border: none; border-radius: 50%; background-color: white'
 
-.mb-4
-  = link_to t('post.btn.back_to_posts'), posts_path, class: 'btn btn-secondary'
+= render 'comments-block', post: @post
 
-  - if current_user && @post.creator == current_user
-    br
-    = link_to 'Edit this post', edit_post_path(@post)
-    = button_to 'Destroy this post', @post, method: :delete, class: 'btn btn-danger'
-
-= render 'new_post_comment', post: @post, parent_id: nil
-= render 'post_comments', comments: @comments

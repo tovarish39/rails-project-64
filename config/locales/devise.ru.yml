@@ -1,7 +1,14 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
-en:
+ru:
   devise:
+    log_in: Войти
+    registration: Регистрация
+    sign_up: Регистрация
+    password: Пароль
+    password_confirmation: Подтверждение пароля
+    password_hint: (минимум 6 знаков)
+    remember_me: Запомнить меня
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -9,7 +16,7 @@ en:
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
-      invalid: "Неправильный %{authentication_keys} или пароль."
+      invalid: Неправильный %{authentication_keys} или пароль.
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Неправильный %{authentication_keys} или пароль."
@@ -38,7 +45,7 @@ en:
       updated_not_active: "Your password has been changed successfully."
     registrations:
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
+      signed_up: "Добро пожаловать! Вы успешно зарегистрировались."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
       signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
       signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
@@ -60,6 +67,6 @@ en:
       expired: "has expired, please request a new one"
       not_found: "not found"
       not_locked: "was not locked"
-      not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+      not_saved: 'Проверьте введённые данные:'
+        # one: "1 error prohibited this %{resource} from being saved:"
+        # other: "%{count} errors prohibited this %{resource} from being saved:"

@@ -24,7 +24,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts # , dependent: :restrict_with_error
-  has_many :comments, class_name: 'PostComment' # , dependent: :restrict_with_error
-  has_many :likes   , class_name: 'PostLike' # , dependent: :restrict_with_error # rubocop:disable Layout/SpaceBeforeComma
+  has_many :posts                              , dependent: :restrict_with_error # rubocop:disable Layout/SpaceBeforeComma
+  has_many :comments, class_name: 'PostComment', dependent: :restrict_with_error
+  has_many :likes   , class_name: 'PostLike'   , dependent: :restrict_with_error # rubocop:disable Layout/SpaceBeforeComma
 end

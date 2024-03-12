@@ -6,4 +6,9 @@ module PostsHelper
 
     PostLike.find_by(user:, post:)
   end
+
+  def sliced_body(text)
+    sliced = text.slice(0, 200)
+    sliced.size < text.size ? "#{sliced}..." : text
+  end
 end

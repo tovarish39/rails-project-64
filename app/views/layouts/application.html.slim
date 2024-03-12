@@ -1,17 +1,18 @@
 doctype html
-html
+html.h-100
   head
     title
-      | RailsProject64
+      | Коллективный блог
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
-  body class='container'
+  body.d-flex.flex-column.h-100
     = render 'partials/nav'
-    - if flash[:notice]
-        .alert.alert-success = flash[:notice]
-    - if flash[:alert]
-        .alert.alert-danger = flash[:alert]
-    = yield
+    .container.my-4
+      - if flash[:notice]
+          .alert.alert-info = flash[:notice]
+      - if flash[:alert]
+          .alert.alert-danger = flash[:alert]
+      = yield

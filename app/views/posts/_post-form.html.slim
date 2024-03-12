@@ -1,0 +1,5 @@
+= simple_form_for post do |f|
+  = f.input :title, required: true, hint: t('post.form.hint.title'), label: t('post.attributes.title.label')
+  = f.association :category, collection: Category.all, required: true, label: t('post.attributes.category.label')
+  = f.input :body, required: true, hint: t('post.form.hint.body'), label: t('post.attributes.body.label')
+  = f.submit t('post.btn.create'), class: 'btn btn-primary'

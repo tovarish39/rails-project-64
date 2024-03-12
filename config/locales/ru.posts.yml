@@ -1,0 +1,24 @@
+ru:
+  post:
+    all: 
+      link: Все посты
+      title: Коллективный блог
+    new: Новый пост
+    notice:
+      success_created: Пост опубликован.
+      failed_created: Не удалось создать пост. Проверьте введенные данные.
+      success_updated: Пост успешно изменён.
+      success_destroyed: Пост удалён.
+    btn:
+      create: Опубликовать
+    form:
+      hint:
+        title: 5 - 255 символов
+        body: 100 - 4000 символов
+    attributes:
+      title:
+        label: Заголовок
+      category:
+        label: Категория
+      body:
+        label: Содержание

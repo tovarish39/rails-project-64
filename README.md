@@ -1,33 +1,37 @@
 ![local tests and linter](https://github.com/tovarish39/rails-project-64/actions/workflows/rubyonrails.yml/badge.svg) ![hexlet-check](https://github.com/tovarish39/rails-project-64/actions/workflows/hexlet-check.yml/badge.svg)
 
-# Проект "Коллективный блог"
-Проект - доска постов, которые создают пользователи сайта. Под постами пользователи могут оставлять свои комментарии(в виде "дерева" на определённую глубину), ставить лайк на пост. Просматривать посты могут как залогинненные, так и не залогинненные пользователи.Пользователи сайта могут регистрироваться и заходить на сайт под своим аккаунтом. Залогиненные пользователи могут создавать посты, писать комментарии под постами, писать комментарии на уже созданные комментарии. Авторы постов и комментариев могут их редактировать и удалять.
+# Project "Collective Blog"
+The project is a board of posts created by site users. Under posts, users can leave their comments (in the form of a “tree” to a certain depth) and like the post. Both logged in and non-logged in users can view posts. Site users can register and log into the site under their account. Logged in users can create posts, write comments under posts, and write comments on already created comments. Authors of posts and comments can edit and delete them.
 
-# Техническое описание и требования к реализации проекта
+# Technical description and requirements for project implementation
 - ruby  --version # => 3.2.2
 - rails --version # => 7.1.3
 
-## Оформление
-- В файле README.md есть github action бейджик со статусом прохождения тестов и литнера
-- В файле README.md приложены ссылки на демонстрационный проект
+## Decor
+- In the README.md file there is a github action badge with the status of passing tests and litner
+- The README.md file contains links to the demo project
 
-## Тесты
-- Используется minitest и power assert
-- Для генерации тестовых данных используется Faker
+## Tests
+- Minitest and power assert are used
+- Faker is used to generate test data
 
-## Именование
-- Вложенные ресурсы содержат префикс в виде имени основной сущности
-- Контроллеры и связи не содержат префикса
+## Naming
+- Nested resources are prefixed with the name of the main entity
+- Controllers and communications do not contain a prefix
 
-## Код
-- Круды построены через ресурсный роутинг
-- Все ссылки (в шаблонах и контроллерах) строятся только через именованный роутинг
-- Все интерфейсные тексты находятся в файлах локалей
-- Для представлений используется шаблонизатор slim
-- Используются только стандартные механизмы Bootstrap
+## Code
+- CRUDs are built through resource routing
+- All links (in templates and controllers) are built only through named routing
+- All interface texts are located in locale files
+- The slim template engine is used for views
+- Only standard Bootstrap mechanisms are used
 
-# Проект расположен по [ссылке](https://educational-project-2.onrender.com). 
-Доступен до конца мая 2024, так как на продакшне стоит postgres, а бесплатное использование заканчивается этим сроком
+# The project is located at the [link](https://educational-project-2.onrender.com). 
+Available until the end of May 2024, since postgres is installed in production, and free use ends this period
 
-# запуск проекта
+# Launch of the project
     make setup
+
+
+## вопросы
+- нажимае вкладку "Войти", с пустыми полями нажимает кнопку "Войти". локаль определена как :ru. По каким-то непонятными причинам текст flash t('devise.failure.invalid') берётся не из файла device.ru.yml, а из device.en.yml.  с остальными текстами так не происходит. поставлена "заглушка". в файле devise.en.yml по этой позиции поставлен русский текст, вместо английского. c t('devise.failure.unauthenticated') и  t('devise.failure.unconfirmed')  такая же история

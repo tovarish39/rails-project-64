@@ -1,5 +1,0 @@
-= simple_form_for post do |f|
-  = f.input :title, required: true, hint: t('post.form.hint.title')
-  = f.association :category, collection: Category.all, required: true
-  = f.input :body, required: true, hint: t('post.form.hint.body')
-  = f.button :submit, class: 'btn btn-outline-secondary'

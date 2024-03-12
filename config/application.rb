@@ -25,5 +25,7 @@ module RailsProject64
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.max_comment_depth = 2
   end
 end
