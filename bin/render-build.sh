@@ -2,7 +2,7 @@
 # exit on error
 set -o errexit
 
-make after_commit
+make install
 
 # bundle install
 # bundle exec rails assets:precompile
