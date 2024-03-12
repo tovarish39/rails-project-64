@@ -5,11 +5,11 @@ install: prepare_dependencies prepare_db prepare_assets prepare_assets lint_rubo
 after_commit: prepare_dependencies mirgate_db prepare_assets lint_rubocop lint_slim test
 
 prepare_dependencies:
-	@export TERM=xterm
-	@tput setaf 3 && echo '----------start install gems...' && tput sgr0
-	bundle install
-	@tput setaf 3 && echo '----------start install yarn dependencies...' && tput sgr0
-	yarn install
+	@export TERM=xterm && \
+		tput setaf 3 && echo '----------start install gems...' && tput sgr0 && \
+		bundle install && \
+		tput setaf 3 && echo '----------start install yarn dependencies...' && tput sgr0 && \
+		yarn install
 
 prepare_db:
 	@tput setaf 3 && echo '----------preparing database...' && tput sgr0
