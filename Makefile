@@ -3,7 +3,9 @@ install: prepare_dependencies prepare_db prepare_assets prepare_assets lint_rubo
 
 # 2) на коммит
 after_commit: prepare_dependencies mirgate_db prepare_assets lint_rubocop lint_slim test
+
 prepare_dependencies:
+	@export TERM=xterm
 	@tput setaf 3 && echo '----------start install gems...' && tput sgr0
 	bundle install
 	@tput setaf 3 && echo '----------start install yarn dependencies...' && tput sgr0
@@ -15,7 +17,7 @@ prepare_db:
 
 mirgate_db:
 	@tput setaf 3 && echo '----------migrate database...' && tput sgr0
-	bin/rails db:migrate db:seed
+	bin/rails db:migrate
 
 prepare_assets:
 	@tput setaf 3 && echo '----------preparing assets...' && tput sgr0
