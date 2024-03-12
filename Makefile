@@ -12,7 +12,7 @@ prepare_dependencies:
 
 prepare_db:
 	# @tput setaf 3 && echo '----------preparing database...' && tput sgr0
-	bin/rails db:create db:migrate db:seed
+	RAILS_ENV=production bin/rails db:create db:migrate db:seed
 
 mirgate_db:
 	# @tput setaf 3 && echo '----------migrate database...' && tput sgr0

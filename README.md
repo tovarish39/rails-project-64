@@ -27,7 +27,6 @@ The project is a board of posts created by site users. Under posts, users can le
 - Only standard Bootstrap mechanisms are used
 
 # The project is located at the [link](https://educational-project-2.onrender.com). 
-Available until the end of May 2024, since postgres is installed in production, and free use ends this period
 
 # Launch of the project
     make setup
