@@ -15,7 +15,7 @@ prepare_db:
 
 mirgate_db:
 	@tput setaf 3 && echo '----------migrate database...' && tput sgr0
-	bin/rails db:migrate
+	bin/rails db:migrate db:seed
 
 prepare_assets:
 	@tput setaf 3 && echo '----------preparing assets...' && tput sgr0
