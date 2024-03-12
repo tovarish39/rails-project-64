@@ -23,7 +23,7 @@
 #  user_id      (user_id => users.id)
 #
 class Post < ApplicationRecord
-  belongs_to :creator, class_name: 'User', foreign_key: :user_id
+  belongs_to :creator, class_name: 'User', foreign_key: :user_id # rubocop:disable Rails/InverseOf
   belongs_to :category
   has_many :comments, class_name: 'PostComment', dependent: :destroy
   has_many :likes   , class_name: 'PostLike'   , dependent: :destroy # rubocop:disable Layout/SpaceBeforeComma

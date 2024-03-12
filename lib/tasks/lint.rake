@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 desc 'Lint'.yellow
-task lint: :environment do
-  puts 'start linting'
-  system('slim-lint app/**/*.slim')
-  system('rubocop -a')
-  puts 'end linting'
+namespace :lint do
+  task rubocop: :environment do
+    system('rubocop -a')
+  end
+
+  task slim: :environment do
+    system('slim-lint app/**/*.slim')
+  end
 end

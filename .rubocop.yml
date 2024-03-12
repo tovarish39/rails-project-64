@@ -3,6 +3,10 @@ require: rubocop-rails
 AllCops:
   Exclude:
     - '**/*.slim'
+    - bin/*
+    - config/initializers/*
+    - db/schema.rb
+
   TargetRubyVersion: 3.2
   SuggestExtensions: false
   NewCops: enable

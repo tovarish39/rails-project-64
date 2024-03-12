@@ -79,7 +79,6 @@ gem 'rubocop'
 gem 'annotate'
 gem 'colorize'
 gem 'faker'
-gem 'power_assert', '~> 2.0', '>= 2.0.3'
 gem 'rubocop-rails'
 gem 'slim_lint'
 gem 'slim-rails'
@@ -92,3 +91,5 @@ gem 'simple_form', '~> 5.3'
 gem 'bcrypt', '~> 3.1'
 
 gem 'ancestry', '~> 4.3'
+
+gem 'minitest-power_assert'
