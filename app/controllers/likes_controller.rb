@@ -20,7 +20,7 @@ class LikesController < ApplicationController
 
   def destroy
     like = PostLike.find(params[:id])
-    like.destroy if current_user&.likes&.any? { |users_like| users_like == like }
+    like.destroy if current_user&.likes&.any?(like)
     # не работает с turbo. без turbo не пробовал
     # redirect_to "#{request.referer}#post_#{post_id}"
     redirect_to request.url
