@@ -9,8 +9,9 @@ prepare_dependencies:
 	yarn install
 
 prepare_db:
+	bin/rails db:create db:migrate RAILS_ENV=production
 	rake clear_db RAILS_ENV=production
-	bin/rails db:create db:migrate db:seed RAILS_ENV=production
+	bin/rails db:seed  RAILS_ENV=production
 
 mirgate_db:
 	bin/rails db:migrate RAILS_ENV=production
