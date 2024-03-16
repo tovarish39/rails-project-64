@@ -5,7 +5,7 @@ AllCops:
   Exclude:
     - '**/*.slim'
     - bin/*
-    - config/initializers/*
+    # - config/initializers/*
     - db/schema.rb
   SuggestExtensions: false
   NewCops: enable

@@ -17,5 +17,6 @@ class Category < ApplicationRecord
   has_many :posts, dependent: :restrict_with_error
 
   validates :name, length: { in: 5..30 }
-  validates :name, uniqueness: true # по рекомендациям рубокопа был добавлен индекс для поля :name через миграцию, но почему-то рубокоп всё равно определяет как ошибку
+  # непонятно почему рубокоп на это ругается. для этого поля есть индекс в бд
+  validates :name, uniqueness: true # rubocop:disable Rails/UniqueValidationWithoutIndex
 end
