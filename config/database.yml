@@ -11,15 +11,15 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
-production:
-  <<: *default
-  database: storage/production.sqlite3
-
-
 # production:
-#   adapter: postgresql
-#   encoding: unicode
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   <<: *default
+#   database: storage/production.sqlite3
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   # database: hexlet_education_postgres
   # username: hexlet_education_postgres_user
