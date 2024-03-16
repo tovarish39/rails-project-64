@@ -26,3 +26,11 @@ Layout/LineLength:
 Style/HashSyntax:
   Exclude:
     - 'app/views/**/*.slim'
+
+Lint/RedundantCopDisableDirective:
+  Exclude:
+    - app/models/category.rb
+  
+Lint/RedundantCopDisableDirective:
+  Exclude:
+    - 'config/initializers/simple_form_bootstrap.rb'

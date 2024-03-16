@@ -30,3 +30,4 @@ The project is a board of posts created by site users. Under posts, users can le
 
 # Launch of the project
     make setup
+    rails s
