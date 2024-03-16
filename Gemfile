@@ -74,16 +74,23 @@ group :production do
 end
 
 gem 'devise', '~> 4.9'
+
 gem 'rubocop'
 
 gem 'annotate'
+
 gem 'colorize'
+
 gem 'faker'
+
 gem 'rubocop-rails'
+
 gem 'slim_lint'
+
 gem 'slim-rails'
 
 gem 'sentry-rails'
+
 gem 'sentry-ruby'
 
 gem 'simple_form', '~> 5.3'
@@ -93,3 +100,5 @@ gem 'bcrypt', '~> 3.1'
 gem 'ancestry', '~> 4.3'
 
 gem 'minitest-power_assert'
+
+gem 'rake', '13.0.6'
