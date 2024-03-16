@@ -30,5 +30,5 @@ class PostComment < ApplicationRecord
 
   has_ancestry
 
-  validates :content, presence: true
+  validates :content, length: { in: 10..100 }
 end

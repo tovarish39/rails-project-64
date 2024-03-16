@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def show
     @likes = @post.likes
     @comments = @post.comments.order(created_at: :desc)
+    @liked_by_self = @post.likes.any? { |like| like.user == current_user }
   end
 
   # GET /posts/new

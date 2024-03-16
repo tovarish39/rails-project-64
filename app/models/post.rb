@@ -4,13 +4,14 @@
 #
 # Table name: posts
 #
-#  id          :integer          not null, primary key
-#  body        :text
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer          not null
-#  user_id     :integer          not null
+#  id               :integer          not null, primary key
+#  body             :text
+#  post_likes_count :integer
+#  title            :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  category_id      :integer
+#  user_id          :integer
 #
 # Indexes
 #
@@ -30,4 +31,6 @@ class Post < ApplicationRecord
 
   validates :title, length: { in: 5..255 }
   validates :body, length: { in: 100..4000 }
+
+  attribute :post_likes_count, default: 0
 end

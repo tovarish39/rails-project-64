@@ -33,6 +33,4 @@ The project is a board of posts created by site users. Under posts, users can le
 
 
 ## комментарии к невыполненым требованиям и вопросы
-- нажимае вкладку "Войти", с пустыми полями нажимает кнопку "Войти". локаль определена как :ru. По каким-то непонятными причинам текст flash t('devise.failure.invalid') берётся не из файла device.ru.yml, а из device.en.yml.  с остальными текстами так не происходит. поставлена "заглушка". в файле devise.en.yml по этой позиции поставлен русский текст, вместо английского. c t('devise.failure.unauthenticated') и  t('devise.failure.unconfirmed')  такая же история
-
 - с проверкой hexlet-check не смог до конца разобраться. падает на LikesControllerTest#test_#destroy_by_other_user. всё вроде рабтает, но не понятно что именно тесту не нравится. у меня сделано, что лайк может ставить и убирать свой лайк только залогиненный юзер

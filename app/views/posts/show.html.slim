@@ -7,9 +7,9 @@
       .post-section
         span.me-2 = @post.creator.email
       .likes-section
-        span.me-2 = @post.likes.count
+        span.me-2 = @post.post_likes_count
         - my_like = my_like_by(@post, current_user)
-        - if current_user && my_like
+        - if @liked_by_self
           = link_to render('partials/like_image', type: :liked),
             post_like_path(post_id: my_like.post.id, id: my_like.id),
             data: { turbo_method: :delete }
