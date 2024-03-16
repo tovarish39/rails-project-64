@@ -27,5 +27,7 @@ module RailsProject64
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.max_comment_depth = 2
+    config.i18n.available_locales = %i[ru en]
+    config.i18n.default_locale = :ru
   end
 end

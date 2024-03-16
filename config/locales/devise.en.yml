@@ -14,8 +14,8 @@ en:
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Неправильный %{authentication_keys} или пароль."
       timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "Необходимо Войти или Зарегистрироваться."
-      unconfirmed: "Необходимо Войти или Зарегистрироваться."
+      unauthenticated: "test  Необходимо Войти или Зарегистрироваться."
+      unconfirmed: "test Необходимо Войти или Зарегистрироваться."
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
