@@ -34,3 +34,13 @@ Lint/RedundantCopDisableDirective:
 Lint/RedundantCopDisableDirective:
   Exclude:
     - 'config/initializers/simple_form_bootstrap.rb'
+
+Rails/UniqueValidationWithoutIndex:
+  Exclude:
+    - app/models/category.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/initializers/simple_form_bootstrap.rb'
+    - config/environments/development.rb
+    - lib/tasks/auto_annotate_models.rake
