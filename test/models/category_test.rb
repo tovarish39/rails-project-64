@@ -11,7 +11,7 @@
 #
 # Indexes
 #
-#  index_categories_on_name  (name)
+#  index_categories_on_name  (name) UNIQUE
 #
 require 'test_helper'
 

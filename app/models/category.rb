@@ -11,7 +11,7 @@
 #
 # Indexes
 #
-#  index_categories_on_name  (name)
+#  index_categories_on_name  (name) UNIQUE
 #
 class Category < ApplicationRecord
   has_many :posts, dependent: :restrict_with_error
