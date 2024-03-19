@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'annotate'
+
 gem 'devise', '~> 4.9'
 
 gem 'colorize'
@@ -26,7 +28,13 @@ gem 'minitest-power_assert'
 
 gem 'rake', '13.0.6'
 
-# gem 'dotenv'
+gem 'dotenv'
+
+gem 'rubocop'
+
+gem 'rubocop-rails'
+
+gem 'slim_lint'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
@@ -85,10 +93,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'annotate'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'slim_lint'
 end
 
 group :test do
