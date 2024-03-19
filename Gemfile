@@ -6,17 +6,9 @@ ruby '3.2.2'
 
 gem 'devise', '~> 4.9'
 
-gem 'rubocop'
-
-gem 'annotate'
-
 gem 'colorize'
 
 gem 'faker'
-
-gem 'rubocop-rails'
-
-gem 'slim_lint'
 
 gem 'slim-rails'
 
@@ -93,6 +85,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'annotate'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'slim_lint'
 end
 
 group :test do
