@@ -1,22 +1,22 @@
 require: rubocop-rails
 
-AllCops:
-  TargetRubyVersion: 3.2.2
-  Exclude:
-    - bin/*
-    - db/schema.rb
-  SuggestExtensions: false
-  NewCops: enable
+# AllCops:
+#   TargetRubyVersion: 3.2.2
+#   Exclude:
+#     - bin/*
+#     - db/schema.rb
+#   SuggestExtensions: false
+#   NewCops: enable
 
 
-Metrics/BlockLength:
-  Exclude:
-    - config/environments/*
-    - config/initializers/simple_form_bootstrap.rb
-    - lib/tasks/auto_annotate_models.rake
+# Metrics/BlockLength:
+#   Exclude:
+#     - config/environments/*
+#     - config/initializers/simple_form_bootstrap.rb
+#     - lib/tasks/auto_annotate_models.rake
 
-Style/Documentation:
-  Enabled: false
+# Style/Documentation:
+#   Enabled: false
 
 # Layout/LineLength:
 #   Exclude:
