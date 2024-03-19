@@ -29,8 +29,8 @@ class Post < ApplicationRecord
   has_many :comments, class_name: 'PostComment', dependent: :destroy
   has_many :likes   , class_name: 'PostLike'   , dependent: :destroy # rubocop:disable Layout/SpaceBeforeComma
 
-  validates :title, length: { in: 5..255 }
-  validates :body, length: { in: 100..4000 }
+  validates :title, length: { minimum: 5, maximum: 255 }
+  validates :body, length: { minimum: 100, maximum: 4000 }
 
   attribute :post_likes_count, default: 0
 end

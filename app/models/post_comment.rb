@@ -30,5 +30,5 @@ class PostComment < ApplicationRecord
 
   has_ancestry
 
-  validates :content, length: { in: 10..100 }
+  validates :content, length: { minimum: 10, maximum: 400 }
 end
