@@ -3,7 +3,7 @@ require: rubocop-rails
 AllCops:
   TargetRubyVersion: 3.2.2
   Exclude:
-    - '**/*.slim'
+    # - '**/*.slim'
     - bin/*
     - db/schema.rb
   SuggestExtensions: false
