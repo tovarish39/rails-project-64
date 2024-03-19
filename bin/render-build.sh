@@ -2,8 +2,8 @@
 # exit on error
 set -o errexit
 
-make install
-# make on_commit
+# make install
+make on_commit
 
 # bundle install
 # bundle exec rails assets:precompile
