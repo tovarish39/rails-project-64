@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
   def index
-    @posts = Post.includes(:creator).order(created_at: :desc)
+    @posts = Post.limit(100).includes(:creator).order(created_at: :desc)
   end
 
   def show
