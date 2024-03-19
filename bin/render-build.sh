@@ -3,7 +3,7 @@
 set -o errexit
 
 make install
-# make after_commit
+# make on_commit
 
 # bundle install
 # bundle exec rails assets:precompile

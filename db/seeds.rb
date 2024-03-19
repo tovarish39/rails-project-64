@@ -48,14 +48,15 @@ posts = [
 
 ]
 
-posts.each do |post|
-  user.posts.create(
-    title: post[:title],
-    body: post[:body],
-    category: categories.sample
-  )
+5.times do
+  posts.each do |post|
+    user.posts.create(
+      title: post[:title],
+      body: post[:body],
+      category: categories.sample
+    )
+  end
 end
-
 post_first = Post.first
 
 post_first.likes.create(user:)

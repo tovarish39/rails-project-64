@@ -16,6 +16,6 @@
 class Category < ApplicationRecord
   has_many :posts, dependent: :restrict_with_error
 
-  validates :name, length: { minimum: 5, maximum: 100 }
+  validates :name, length: { minimum: 4, maximum: 100 }
   validates :name, uniqueness: true
 end

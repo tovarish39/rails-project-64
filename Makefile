@@ -2,7 +2,7 @@
 install: prepare_gems prepare_yarn prepare_db prepare_assets prepare_assets lint_rubocop lint_slim test
 
 # 2) на коммит
-after_commit: prepare_gems prepare_yarn mirgate_db prepare_assets lint_rubocop lint_slim test
+on_commit: prepare_gems prepare_yarn mirgate_db prepare_assets lint_rubocop lint_slim test
 
 prepare_gems:
 	bundle install
