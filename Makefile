@@ -1,5 +1,5 @@
 # 1) первый запуск или полный сброс того что было
-install: db_rollback prepare_gems prepare_yarn prepare_db prepare_assets prepare_assets lint_rubocop lint_slim test
+install:  prepare_gems prepare_yarn prepare_db prepare_assets prepare_assets lint_rubocop lint_slim test
 
 # 2) на коммит
 on_commit: prepare_gems prepare_yarn mirgate_db prepare_assets lint_rubocop lint_slim test
@@ -11,6 +11,7 @@ prepare_yarn:
 	yarn install
 
 prepare_db:
+	bin/rails db:rollback STEP=5
 	bin/rails db:create db:migrate RAILS_ENV=production
 	rake clear_db RAILS_ENV=production
 	bin/rails db:seed  RAILS_ENV=production
@@ -30,6 +31,3 @@ lint_slim:
 test:
 	bin/rails test
 
-
-db_rollback:
-	bin/rails db:rollback STEP=5
