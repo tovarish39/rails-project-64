@@ -26,7 +26,7 @@ gem 'minitest-power_assert'
 
 gem 'rake', '13.0.6'
 
-# gem 'dotenv'
+gem 'dotenv'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
