@@ -25,5 +25,4 @@ Layout/LineLength:
 
 Lint/RedundantCopDisableDirective:
   Exclude:
-    - app/models/category.rb
     - config/initializers/simple_form_bootstrap.rb

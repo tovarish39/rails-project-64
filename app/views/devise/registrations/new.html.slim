@@ -1,6 +1,6 @@
 h2 = t('devise.sign_up')
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render 'devise/shared/error_messages', resource: resource
+  = render 'devise/shared/error_messages', resource:
   .form-inputs
     .form-group.email.user_email
       = f.input :email, autofocus: true, autocomplete: 'email', required: true, error: resource.errors[:email].first
