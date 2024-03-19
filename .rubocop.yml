@@ -3,7 +3,6 @@ require: rubocop-rails
 AllCops:
   TargetRubyVersion: 3.2.2
   Exclude:
-    # - '**/*.slim'
     - bin/*
     - db/schema.rb
   SuggestExtensions: false
@@ -23,6 +22,6 @@ Layout/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
 
-Lint/RedundantCopDisableDirective:
-  Exclude:
-    - config/initializers/simple_form_bootstrap.rb
+# Lint/RedundantCopDisableDirective:
+#   Exclude:
+#     - config/initializers/simple_form_bootstrap.rb
