@@ -1,11 +1,13 @@
 # 1) первый запуск или полный сброс того что было
-install: prepare_dependencies prepare_db prepare_assets prepare_assets lint_rubocop lint_slim test
+install: prepare_gems prepare_yarn prepare_db prepare_assets prepare_assets lint_rubocop lint_slim test
 
 # 2) на коммит
-after_commit: prepare_dependencies mirgate_db prepare_assets lint_rubocop lint_slim test
+after_commit: prepare_gems prepare_yarn mirgate_db prepare_assets lint_rubocop lint_slim test
 
-prepare_dependencies:
+prepare_gems:
 	bundle install
+
+prepare_yarn:
 	yarn install
 
 prepare_db:
