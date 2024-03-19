@@ -7,7 +7,12 @@
     p.card-text = comment.content
   .card-footer.border-0
     - if comment.ancestors.count < Rails.application.config.max_comment_depth
-      a.fs-6.text-decoration-underline.text-lowercase(type='button' aria-expanded='false' data-bs-target="#response_comment-#{comment.id}" data-bs-toggle='collapse' href="#")
+      a.fs-6.text-lowercase(
+        type='button'
+        aria-expanded='false'
+        data-bs-target="#response_comment-#{comment.id}"
+        data-bs-toggle='collapse' href="#"
+        )
         = t('comment.link.answer')
     .ms-2.collapse id="response_comment-#{comment.id}"
       = render 'comment-form', post: comment.post, parent_id: comment.id

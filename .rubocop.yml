@@ -5,7 +5,6 @@ AllCops:
   Exclude:
     - '**/*.slim'
     - bin/*
-    # - config/initializers/*
     - db/schema.rb
   SuggestExtensions: false
   NewCops: enable
@@ -13,8 +12,9 @@ AllCops:
 
 Metrics/BlockLength:
   Exclude:
-    - 'config/environments/*'
-    - 'lib/tasks/auto_annotate_models.rake'
+    - config/environments/*
+    - config/initializers/simple_form_bootstrap.rb
+    - lib/tasks/auto_annotate_models.rake
 
 Style/Documentation:
   Enabled: false
@@ -23,20 +23,7 @@ Layout/LineLength:
   Exclude:
     - 'config/initializers/devise.rb'
 
-Style/HashSyntax:
-  Exclude:
-    - 'app/views/**/*.slim'
-
 Lint/RedundantCopDisableDirective:
   Exclude:
     - app/models/category.rb
-  
-Lint/RedundantCopDisableDirective:
-  Exclude:
-    - 'config/initializers/simple_form_bootstrap.rb'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'config/initializers/simple_form_bootstrap.rb'
-    - config/environments/development.rb
-    - lib/tasks/auto_annotate_models.rake
+    - config/initializers/simple_form_bootstrap.rb
