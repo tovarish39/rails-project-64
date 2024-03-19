@@ -102,3 +102,5 @@ gem 'ancestry', '~> 4.3'
 gem 'minitest-power_assert'
 
 gem 'rake', '13.0.6'
+
+gem 'dotenv'

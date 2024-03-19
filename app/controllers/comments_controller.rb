@@ -7,24 +7,14 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     comment = post.comments.new(params_comment)
     comment.user = current_user
-    comment.save
 
-    redirect_to post
-  end
-
-  def update
-    comment = PostComment.find(params[:id])
-    post = comment.post
-    comment.content = params[:post_comment][:content]
-    comment.save
-
-    redirect_to post
-  end
-
-  def destroy
-    comment = PostComment.find(params[:id])
-    post = comment.post
-    comment.destroy
+    if comment.save
+      flash[:notice] = t('comment.notice.success_created')
+    else
+      flash[:alert] =
+        t('comment.notice.failed_created', min_length: ENV.fetch('COMMENT_LENGTH_MIN', 10),
+                                           max_length: ENV.fetch('COMMENT_LENGTH_MAX', 400))
+    end
 
     redirect_to post
   end
