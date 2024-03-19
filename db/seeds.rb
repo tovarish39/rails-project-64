@@ -48,14 +48,12 @@ posts = [
 
 ]
 
-5.times do
-  posts.each do |post|
-    user.posts.create(
-      title: post[:title],
-      body: post[:body],
-      category: categories.sample
-    )
-  end
+posts.each do |post|
+  user.posts.create(
+    title: post[:title],
+    body: post[:body],
+    category: categories.sample
+  )
 end
 post_first = Post.first
 
