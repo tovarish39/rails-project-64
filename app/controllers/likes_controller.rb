@@ -1,22 +1,20 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    if current_user
-      post = Post.find(params[:post_id])
-      PostLike.create(
-        post:,
-        user: current_user
-      )
-    end
+    post = Post.find(params[:post_id])
+    post.likes.find_or_create_by(user: current_user)
 
     redirect_to request.url
   end
 
   def destroy
-    like = PostLike.find(params[:id])
-    like.destroy if current_user&.likes&.any?(like)
+    like = PostLike.find_by(id: params[:id], user: current_user)
+    post = Post.find(params[:post_id])
 
-    redirect_to request.url
+    like&.destroy
+    redirect_to post
   end
 end

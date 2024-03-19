@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts do
+  resources :posts, only: %i[index show new create] do
     resources :comments, only: %i[create]
     resources :likes, only: %i[create destroy] # , shallow: true
   end
