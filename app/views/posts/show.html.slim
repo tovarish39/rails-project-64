@@ -7,7 +7,7 @@
       .post-section
         span.me-2 = @post.creator.email
       .likes-section
-        span.me-2 = @post.post_likes_count
+        span.me-2 = @post.likes_count
         - my_like = my_like_by(@post, current_user)
         - if @liked_by_self
           = link_to render('partials/like_image', type: :liked),

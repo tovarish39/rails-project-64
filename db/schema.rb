@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_091926) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "category_id"
-    t.integer "post_likes_count"
+    t.integer "likes_count", default: 0
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
