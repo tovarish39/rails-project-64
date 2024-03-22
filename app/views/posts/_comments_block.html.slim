@@ -1,6 +1,6 @@
 .lead.mt-3#comment-section
   span = t('comment.all.title')
-  = render 'comment-form', post:, parent_id: nil
+  = render 'comment_form', post:, parent_id: nil
   - post.comments.each do |comment|
     - if comment.root?
-      = render 'comment-node', comment:
+      = render 'comment_node', comment:

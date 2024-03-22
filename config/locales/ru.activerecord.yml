@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        post_comment:
+          attributes:
+            content:
+              too_short: Слишком короткий комментарий
+              too_long: Слишком длинный комментарий

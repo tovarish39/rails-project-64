@@ -8,4 +8,4 @@ ru:
       answer: Ответить
     notice:
       success_created: Комментарий успешно опубликован
-      failed_created: Не удалось опубликовать комментарий. Длина должна быть от %{min_length} до %{max_length} символов
+      failed_created: Не удалось опубликовать комментарий

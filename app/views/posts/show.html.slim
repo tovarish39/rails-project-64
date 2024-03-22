@@ -1,4 +1,4 @@
-= render 'bread-crumb', post: @post
+= render 'bread_crumb', post: @post
 .row.justify-content-center.mt-4
   article.coll-12
     h1.mb-4.mb-lg-5 = @post.title
@@ -18,4 +18,4 @@
             post_likes_path(@post),
             data: { turbo_method: :post }
 
-= render 'comments-block', post: @post
+= render 'comments_block', post: @post

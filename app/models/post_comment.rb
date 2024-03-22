@@ -31,6 +31,6 @@ class PostComment < ApplicationRecord
   has_ancestry
 
   validates :content,
-            length: { minimum: ENV.fetch('COMMENT_LENGTH_MIN', 10).to_i,
-                      maximum: ENV.fetch('COMMENT_LENGTH_MAX', 400).to_i }
+            length: { minimum: 10,
+                      maximum: 400 }
 end

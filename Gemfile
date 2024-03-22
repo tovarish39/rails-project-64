@@ -28,8 +28,6 @@ gem 'minitest-power_assert'
 
 gem 'rake', '13.0.6'
 
-gem 'dotenv'
-
 gem 'rubocop'
 
 gem 'rubocop-rails'
@@ -93,6 +91,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'i18n-debug', '~> 1.2'
 end
 
 group :test do
