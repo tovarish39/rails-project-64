@@ -23,7 +23,15 @@
 require 'test_helper'
 
 class PostLikeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'associations' do
+    like = PostLike.new
+
+    assert { !like.save }
+
+    like.user = users(:one)
+    assert { !like.save }
+
+    like.post = posts(:one)
+    assert { like.save }
+  end
 end

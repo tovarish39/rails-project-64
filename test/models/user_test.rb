@@ -21,9 +21,20 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test 'the truth' do
-  #   user = users(:one)
-  #   puts user.id
-  #   assert true
-  # end
+  setup do
+    @user = users(:one)
+  end
+  test 'check associations' do
+    assert { @user.posts }
+    assert { @user.comments }
+    assert { @user.likes }
+  end
+
+  test 'check email' do
+    first_user_email = @user.email
+
+    another_user = users(:two)
+    another_user.email = first_user_email
+    assert { !another_user.valid? } # uniqueness
+  end
 end

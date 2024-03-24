@@ -16,7 +16,29 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @category = Category.new
+  end
+
+  test 'check :name' do
+    @category.name = 'i' * 3
+    assert { !@category.valid? } # minimum 4 characters
+
+    valid_name = 'i' * 4
+    @category.name = valid_name
+    assert { @category.valid? } # valid
+
+    valid_name = 'i' * 100
+    @category.name = valid_name
+    assert { @category.valid? } # valid
+
+    @category.name = 'i' * 101
+    assert { !@category.valid? } # maximum 100 characters
+
+    @category.name = valid_name
+    assert { @category.save }
+
+    not_uniq_category = Category.new(name: valid_name)
+    assert { !not_uniq_category.save } # uniqueness
+  end
 end

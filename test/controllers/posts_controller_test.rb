@@ -21,10 +21,16 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create post' do
-    post = @post_valid
+    title_before = 'title_before'
+    title_after = 'title_after'
+    @post_valid.title = title_before
+    @post_valid.save
+    assert { @post_valid.title == title_before }
     assert_difference('Post.count') do
-      post posts_url, params: { post: { body: post.body, title: post.title, category_id: post.category_id } }
+      post posts_url,
+           params: { post: { body: @post_valid.body, title: title_after, category_id: @post_valid.category_id } }
     end
+    assert { Post.last.title == title_after }
 
     assert_redirected_to post_url(Post.last)
   end

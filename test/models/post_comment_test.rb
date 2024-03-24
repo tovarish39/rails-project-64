@@ -27,7 +27,37 @@
 require 'test_helper'
 
 class PostCommentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @user = users(:one)
+    @post = posts(:one)
+    @comment = PostComment.new(
+      user: @user,
+      post: @post
+    )
+  end
+  test 'check :content' do
+    @comment.content = 'i' * 9
+    assert { !@comment.valid? } # minimum 10 characters
+
+    @comment.content = 'i' * 10
+    assert { @comment.valid? } # valid
+
+    @comment.content = 'i' * 400
+    assert { @comment.valid? } # valid
+
+    @comment.content = 'i' * 401
+    assert { !@comment.valid? } # maximum 400 characters
+  end
+
+  test 'check associations' do
+    comment = PostComment.new(content: 'valid content')
+
+    assert { !comment.save }
+
+    comment.user = @user
+    assert { !comment.save }
+
+    comment.post = @post
+    assert { comment.save }
+  end
 end

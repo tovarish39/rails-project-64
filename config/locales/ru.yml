@@ -28,6 +28,7 @@
 #       enabled: "ON"
 
 ru:
+  page_title: Коллективный блог
   time:
     formats:
       custom: "%d %B, %H:%M"
