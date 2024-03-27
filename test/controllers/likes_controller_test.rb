@@ -19,15 +19,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  # test 'should destroy like' do
-  #   sign_in @user_with_post_like
-  #   like = @user_with_post_like.likes.first
-  #   like_id = like.id
-  #   delete post_like_url(post_id: like.post.id, id: like_id)
-
-  #   assert { PostLike.find_by(id: like_id).nil? }
-  # end
-  test 'should get destroy' do
+  test 'should destroy like' do
     sign_in @user_with_post_like
 
     post_id = @post_with_like.id
