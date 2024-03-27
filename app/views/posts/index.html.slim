@@ -10,5 +10,5 @@ h1 = t('post.all.title')
           .card-text.mb-2
             = sliced_body(post.body)
           .d-flex.justify-content-between.text-muted.mt-auto
-            span.me-2 = "Понравилось: #{post.likes_count}"
+            span.me-2 = t('post.liked', likes_count: post.likes_count)
             span = post.creator.email

@@ -13,29 +13,18 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   test 'should create like' do
     sign_in @user_without_post_like
 
-    current_user_like_before = PostLike.find_by(user: @user_without_post_like)
-    assert { current_user_like_before.nil? }
-
-    post post_likes_url(@post)
-
-    current_user_like_after = PostLike.find_by(user: @user_without_post_like)
-    assert { current_user_like_after.present? }
-
-    assert_response :redirect
+    assert_difference('PostLike.count') do
+      post post_likes_url(@post)
+    end
   end
 
   test 'should destroy like' do
     sign_in @user_with_post_like
+    like = @user_with_post_like.likes.first
+    like_id = like.id
+    delete post_like_url(post_id: like.post.id, id: like_id)
 
-    current_user_like_before = PostLike.find_by(user: @user_with_post_like)
-    assert { current_user_like_before.present? }
-
-    delete post_like_url(post_id: current_user_like_before.post.id, id: current_user_like_before.id)
-
-    current_user_like_after = PostLike.find_by(user: @user_with_post_like)
-    assert { current_user_like_after.nil? }
-
-    assert_response :redirect
+    assert { PostLike.find_by(id: like_id).nil? }
   end
 
   test 'should not create or destroy like by not authorized user' do

@@ -3,6 +3,7 @@ ru:
     all: 
       link: Все посты
       title: Коллективный блог
+    liked: Понравилось %{likes_count}
     new: Новый пост
     notice:
       success_created: Пост опубликован.
