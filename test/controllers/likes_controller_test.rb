@@ -6,6 +6,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   setup do
     @post = posts(:two)
+    @post_with_like = posts(:one)
     @user_with_post_like = users(:one)
     @user_without_post_like = users(:two)
   end
@@ -18,13 +19,25 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'should destroy like' do
-    sign_in @user_with_post_like
-    like = @user_with_post_like.likes.first
-    like_id = like.id
-    delete post_like_url(post_id: like.post.id, id: like_id)
+  # test 'should destroy like' do
+  #   sign_in @user_with_post_like
+  #   like = @user_with_post_like.likes.first
+  #   like_id = like.id
+  #   delete post_like_url(post_id: like.post.id, id: like_id)
 
-    assert { PostLike.find_by(id: like_id).nil? }
+  #   assert { PostLike.find_by(id: like_id).nil? }
+  # end
+  test 'should get destroy' do
+    sign_in @user_with_post_like
+
+    post_id = @post_with_like.id
+    id = PostLike.find_by(post_id:, user: @user_with_post_like)&.id
+
+    delete post_like_url(post_id:, id:)
+
+    deleted_post_like = PostLike.find_by(id:)
+
+    assert_nil(deleted_post_like)
   end
 
   test 'should not create or destroy like by not authorized user' do
