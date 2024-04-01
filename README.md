@@ -27,6 +27,7 @@ The project is a board of posts created by site users. Under posts, users can le
 - Only standard Bootstrap mechanisms are used
 
 # The project is located at the [link](https://educational-project-2.onrender.com). 
+# The example project is located at the [link](https://rails-collective-blog-ru.hexlet.app/). 
 
 # Launch of the project
     make setup
